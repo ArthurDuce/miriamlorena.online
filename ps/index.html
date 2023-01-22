@@ -36,5 +36,23 @@ CNPJ: 88.868.799/0001-83 // © 2022 -Miriam Lorena. Todos os Direitos Reservados
   </div>
   <script type="text/javascript" src="script.js"></script>
 </script>
+<script>
+(function() {
+     const utmParamQueryString = new URLSearchParams(window.location.search);
+     if (utmParamQueryString.toString()) {
+          var navLinks = document.querySelectorAll('a');
+          navLinks.forEach(function(item) {
+               if (item.href.indexOf('https://miriamlorena.online/') !== -1) {
+                    if (item.href.indexOf('?') === -1) {
+                         item.href += '?' + utmParamQueryString.toString();
+                    } else {
+                         item.href += '&' + utmParamQueryString.toString();
+                    }
+               }
+          });
+     }
+})();
+</script>
+
 </body>
 </html>
